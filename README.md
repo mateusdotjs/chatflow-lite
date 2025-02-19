@@ -1,100 +1,82 @@
-# Welcome to React Router!
+# Chatflow
 
-A modern, production-ready template for building full-stack React applications using React Router.
+## O que é?
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+Chatflow é um projeto full stack que permite que pessoas criem chatbots através de uma interface visual simples e incluam em seu site sem escrever código.
 
-## Features
+## Tecnologias utilizadas
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- **Front-end:** React, React Router v7 (antigo Remix), Zustand, Shadcn
+- **Back-end:** Node.js, Prisma
+- **Validação:** Zod
 
-## Getting Started
+## Como funciona?
 
-### Installation
+1. Você cria uma conta
+2. Cria um chatbot, especificando em qual domínio o chatbot deve funcionar
+3. Edita o fluxo conversacional
+4. Após salvar, inclui a tag `<script>` disponibilizada pela plataforma (na página de dados do bot) no `<head>` do site desejado
+5. O widget do chatbot aparecerá no canto inferior direito da tela
 
-Install the dependencies:
+## Prints
 
-```bash
-npm install
-```
+### Tela de login
 
-### Development
+![Login](prints/1_login.png)
 
-Start the development server with HMR:
+### Home
 
-```bash
-npm run dev
-```
+![Home](prints/2_home.png)
 
-Your application will be available at `http://localhost:5173`.
+### Criar chatbot
 
-## Building for Production
+![Criar chatbot](prints/3_create.png)
 
-Create a production build:
+### Dados do chatbot
 
-```bash
-npm run build
-```
+![Dados do chatbot](prints/4_item.png)
 
-## Deployment
+### Editar fluxo conversacional
 
-### Docker Deployment
+![Editar fluxo conversacional](prints/5_edit_flow.png)
 
-This template includes three Dockerfiles optimized for different package managers:
+### Adicionando script no site do cliente
 
-- `Dockerfile` - for npm
-- `Dockerfile.pnpm` - for pnpm
-- `Dockerfile.bun` - for bun
+![Adicionado script no site do cliente](prints/6_script.png)
 
-To build and run using Docker:
+### Widget na página do cliente
 
-```bash
-# For npm
-docker build -t my-app .
+![Widget no site do cliente](prints/7_widget.png)
 
-# For pnpm
-docker build -f Dockerfile.pnpm -t my-app .
+### Chatbot em ação
 
-# For bun
-docker build -f Dockerfile.bun -t my-app .
+![Chatbot em ação](prints/8_chatbot.png)
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
+## Rodando localmente
 
-The containerized application can be deployed to any platform that supports Docker, including:
+Siga os passos abaixo para rodar o projeto localmente:
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+1. **Clone o repositório**
 
-### DIY Deployment
+   ```bash
+   git clone https://github.com/mateusdotjs/chatflow-lite.git
+   ```
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+2. **Acesse a pasta**
 
-Make sure to deploy the output of `npm run build`
+   ```bash
+   cd chatflow-lite
+   ```
 
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
+3. **Instale as dependências**
 
-## Styling
+   ```bash
+   npm install
+   ```
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+4. **Rode o servidor de desenvolvimento**
+   ```bash
+   npm run dev
+   ```
 
----
-
-Built with ❤️ using React Router.
+O projeto está configurado para rodar no localhost, utilizando a porta padrão do Vite (5173). É possível alterar este endereço criando um arquivo .env e setando as variaveis VITE_DOMAIN e DOMAIN para o endereço que você desejar.
